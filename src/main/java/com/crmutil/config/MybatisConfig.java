@@ -2,7 +2,6 @@ package com.crmutil.config;
 
 import com.crmutil.plugin.PagePlugin;
 import com.crmutil.util.Page;
-import org.aopalliance.aop.Advice;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
