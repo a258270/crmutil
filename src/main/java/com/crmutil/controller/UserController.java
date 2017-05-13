@@ -25,7 +25,7 @@ public class UserController extends BaseController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/add")
+    @RequestMapping(value = "/add/{username}/{password}")
     public String add(@PathVariable String username, @PathVariable String password){
         User u = new User();
         u.setUsername(username);
@@ -68,14 +68,28 @@ public class UserController extends BaseController {
         return "update ok";
     }
 
-    @RequestMapping(value = "/get")
-    public String get() {
+    @RequestMapping(value = "/gets")
+    public String gets() {
         try{
             Page<User> page = new Page<User>();
             List<User> users = userService.getUsers(page);
             page.setResults(users);
             logger.info(users.toString());
         } catch (Exception e){
+            logger.error("gets error", e);
+        }
+
+        return "gets ok";
+    }
+
+    @RequestMapping(value = "/get/{username}")
+    public Object get(@PathVariable String username){
+        try{
+            User user = new User();
+            user.setUsername(username);
+            return userService.getUser(user);
+        }
+        catch(Exception e){
             logger.error("get error", e);
         }
 

@@ -1,12 +1,14 @@
 package com.crmutil.entity;
 
+import java.io.Serializable;
+
 /**
  * description:
  *
  * @author: zmj
  * @create: 2017/5/7
  */
-public class User {
+public class User implements Serializable {
     private String username;
     private String password;
 

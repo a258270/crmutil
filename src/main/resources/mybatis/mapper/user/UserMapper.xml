@@ -7,6 +7,12 @@
             username, password
         FROM user
     </select>
+    <select id="getUser" parameterType="User" resultType="User">
+
+        SELECT username, password
+        FROM user
+        WHERE username = #{username}
+    </select>
     <insert id="addUser" parameterType="User">
         INSERT INTO user (username, password) VALUES (#{username}, #{password})
     </insert>

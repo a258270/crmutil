@@ -1,5 +1,6 @@
 package com.crmutil.util;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +11,7 @@ import java.util.Map;
  * @author: zmj
  * @create: 2017/5/7
  */
-public class Page<T> {
+public class Page<T> implements Serializable {
     public static final int DEFAULT_PAGE_SIZE = 10;
 
     protected int pageNo = 1; // 当前页, 默认为第1页

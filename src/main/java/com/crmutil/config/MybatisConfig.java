@@ -41,7 +41,7 @@ public class MybatisConfig {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(getDataSource());
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource[] resources = resolver.getResources("classpath:mybatis/mapper/*.xml");
+        Resource[] resources = resolver.getResources("classpath:mybatis/mapper/**/*.xml");
 
         Class<?>[] typeAliases = {Page.class};
         sqlSessionFactoryBean.setTypeAliases(typeAliases);
